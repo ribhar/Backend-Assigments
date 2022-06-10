@@ -31,7 +31,7 @@ app.use(express.json())
 
 app.get("/",(req,res)=>{
 
-    res.send("This is Home page");
+    res.send("Home page");
 
 })
 
@@ -39,7 +39,7 @@ app.post("/post",validate(postValidation, {}, {}),(req,res)=>{
    
     console.log(req.body);
     
-    res.send("Printed your data in console");
+    res.send("Data Printed");
 
 })
 
@@ -47,7 +47,7 @@ app.use(function(err, req, res, next) {
    
     if (err instanceof ValidationError) {
     
-        return res.status(400).send("Invalid data")
+        return res.status(400).send("Invalid")
     
     }
   
